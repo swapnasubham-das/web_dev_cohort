@@ -1,0 +1,88 @@
+DNS (Domain Name Server)
+google.com ---> DNS ---> A ---> IP Address
+chaicode.com <--- A <--- IP Address
+
+
+Server
+    Central Authority
+    Source of Truth
+    Controlled Environment
+
+    Business Logic
+    Authentication and Authrization
+    Data Stroage
+    Security
+
+Client
+    Closest to User
+    UI 
+    Untrusted
+
+
+Restraruant
+    Client ---> Customer
+    Server ---> Kitchen
+    Menu   ---> API
+    Order  ---> Data + Request (Payload + Request)
+    Food   ---> Response
+
+
+HTTP 
+    Stateless
+    Text-Based (Mostly)
+    Request-Response
+
+Server
+    Javascript Server
+    EC2/Hostlinger/Linode ---> Web Hosting ---> Vercel/Netlify/EC2/Hostlinger/DO/Linode
+
+Client
+
+
+Protocols
+    Agreed Rules
+    TCP/IP
+    UDP
+
+    TCP/IP --> Reliable --> Ordering --> Loss Detection --> Retransmission --> Flow Control --> Congestion Control
+    UDP    --> Less Reliable --> No Retransmission --> No Ordering --> No Congestion
+
+                                            TCP/IP
+    Server <--------------------------------Sync------------------------------------------> Client
+           <--------------------------------Acknowledgment-------------------------------->
+           <--------------------------------Handshaking----------------------------------->
+
+                                            UDP
+    Server <--------------------------------Sync------------------------------------------> Client
+           <--------------------------------Acknowledgment-------------------------------->
+
+
+Application Level Protocols:-
+    http** http method (GET,POST)
+    ftp
+
+    HTML
+    CSS
+    Javascript
+
+TCP
+UDP
+DTLS
+
+Websocket
+WebRTC
+
+UDP
+    No Encryption
+    No Protection aganist packet tampering
+    No Reliability 
+    DTLS (Encryption + Protection)
+    SCTP (Some level of Reliability)
+  
+
+Blog:-
+    TCP/IP
+    TCP/IP vs UDP
+    TCP/IP vs HTTP
+    
+

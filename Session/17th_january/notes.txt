@@ -1,0 +1,131 @@
+AI:-
+Software:-
+    Website
+    Mobile App
+    Backend
+    Machine Learning/Deep Learning/Natural Language Processing
+
+Low Stake Software
+    Todo App
+    Zoom
+    WhatApps
+
+High Stake Software
+    Hospital
+    Stock Market
+    Air Booking
+    Banking
+
+Deadline
+    4-5 months
+
+Content
+    Problem
+    Solution
+    Implementation
+    Airticle Writing by my own with mistake
+
+
+
+ Internet Vs Web
+    Internet ---> 70s
+    Web WWW  ---> 90s
+
+    Computer <--> Computer 
+            Data Share
+    Computers + Wires/Wireless + Rules(Protocols) = Network
+
+Internet:-
+    Globally connected network that follow some common Protocols
+    like http, tcp, smtp, ftp etc
+
+    Usage:-
+        Email
+        Youtube
+        Chatting
+        Cohort
+
+WWW:-
+    World Wide Web
+    Website <--> Page <--> Links <--> Users
+    Browser (Very complex system)
+    Data/Payload --> Text/Image/Videos
+
+    How to send data from one computer to another
+        Network/Bandwidth
+        Data/Bits
+        Users/Client
+        Receiver/Server
+        Internet
+
+        IP Address
+        Port
+        ISP
+
+        Hardware <---> Software
+        Routers
+        Firewalls
+        Load Balancer
+
+Assignments:-
+    Write an article about hardware, router, modem, switch, firewall, hub, load balancer
+    Linux command
+    Curl command
+    Airticle on DNS 
+
+    dig . NS
+    dig com NS
+    dig google.com NS
+    dig google.com
+    
+    Records Types
+    A record
+    CNAME
+    MX
+    NS
+
+How to connect browser with chaicode.com:-
+    Browser <---> chaicode.com
+    DNS (Name <---> IP Address)
+        Decentralization
+        Delegation
+        Loose Coupling
+        DNS (Who should I talk to next)**
+
+DNS:-
+    Browser (chaicode.com) <---> Root Server ---> (13 Root Server)
+    TLD --> Top level domain
+    Authratative DNS Server
+    Recursive DNS Server
+    DNS is recursive in nature
+
+
+Eraser board: https://hitesh.ai/cohort26-board
+
+https://x.com/Hiteshdotcom/status/2012569094017704000
+
+
+Follow your instructors:
+- Hitesh Choudhary
+https://hitesh.ai/
+
+- Piyush Garg
+https://www.piyushgarg.dev/
+https://hitesh.ai/cohort
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
