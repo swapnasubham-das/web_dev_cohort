@@ -16,8 +16,8 @@ It presents personal, professional, and educational information in a clean and s
 ├── Session/ 
 └── Assignment/
     └── HTML_Resume_Page_Assignment/
-        ├── README.md (400 tokens)
-        └── index.html (1100 tokens)
+        ├── README.md
+        └── index.html
 ```
 ---
 
