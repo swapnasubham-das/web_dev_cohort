@@ -54,6 +54,8 @@ No additional setup is required.
   - Experience
   - Projects
   - Education
+  - Certification
+  - Recognition
   - Contact Information
 
 ---
