@@ -7,7 +7,7 @@ It presents personal, professional, and educational information in a clean and s
 
 ## 🔗 Live Demo
 **Deployed on Netlify:**  
-👉 https://swapnasubham-resume.netlify.app  
+👉 https://swapnasubham-das-resume.netlify.app/ 
 
 ---
 
