@@ -1,0 +1,16 @@
+#parent{
+    border: 2px solid red;
+    padding: 10px;
+    height: 100%;
+    width: 90vw;
+}
+.child{
+    border: 2px solid black;
+    height: 100px;
+    width: 100px;
+}
+
+#parent{
+    display: flex;
+    justify-content: space-around;
+}
