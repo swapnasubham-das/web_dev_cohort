@@ -220,9 +220,15 @@ footer {
 
 .footer {
     background-color: var(--bg-surface);
-    text-align: center;
-    padding: 40px 20px;
-    border-top: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 20px auto;
+    padding: 14px 24px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     }
 
 .footer h1 {
