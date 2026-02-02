@@ -1,0 +1,5 @@
+Flexbox:-
+    ability to control elements on main axis (1D)
+
+Grid:-
+    ability to control on 2D (row and column)

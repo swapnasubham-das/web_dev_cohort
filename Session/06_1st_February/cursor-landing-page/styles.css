@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000000;
+    color: #edecec;
+    font-family: "CursorGothic", "CursorGothic Fallback", system-ui, Helvetica Neue, Helvetica, Arial, sans-serif;  
+}
+
+/* ========================= */
+/* NAVBAR */
+/* ========================= */
+.navbar {
+    /* border: 2px solid #38bdf8; */
+    background:#000000;
+    font-family: "CursorGothic", "CursorGothic Fallback", system-ui, Helvetica Neue, Helvetica, Arial, sans-serif;  
+    /* font-family: "berkeleyMono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace; */
+}
+
+.nav-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    /* padding: 20px 20px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 2px solid #facc15; */
+}
+
+.nav-left {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    /* gap: 10px; */
+    /* border: 2px solid #fb7185; */
+    /* width: 100px; */
+}
+
+.nav-left .icon{
+    width: 60px;
+    height: 60;
+    margin-right: 10px;
+    border-radius: 8px;
+}
+.nav-links {
+    display: flex;
+    gap: 24px;
+    /* border: 2px solid #a78bfa; */
+}
+
+.nav-links a{
+    text-decoration: none;
+    color: #e5e7eb;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.nav-right {
+    /* border: 2px solid #f472b6; */
+    padding: 8px 16px;
+}
+
+.nav-cta {
+    /* border: 2px solid #f472b6; */
+    padding: 8px 16px;
+    border-radius: 16px;
+    background-color: #edecec;
+}
+
+/* ========================= */
+/* HERO */
+/* ========================= */
+.hero {
+    background: #000000;
+    font-family: "berkeleyMono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+}
+
+.hero-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    /* padding: 80px 40px; */
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* border: 2px solid #22d3ee; */
+}
+
+.hero-text {
+    /* border: 2px solid #fb923c; */
+    padding-right: 400px;
+}
+.primary-cta {
+    /* margin-top: 20px; */
+    width: 250px;
+    height: 40px;
+    /* margin-right: 10px; */
+    border-radius: 16px;
+    margin-bottom: 10px;
+}
