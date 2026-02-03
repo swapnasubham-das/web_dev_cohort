@@ -3,23 +3,398 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cursor - The AI Code Editor</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="parent">
-        <div class="child child-1"> Child 1</div>
-        <div class="child child-2"> Child 2</div>
-        <div class="child child-3"> Child 3</div>
-        <div class="child child-4"> Child 4</div>
-        <div class="child child-5"> Child 5</div>
-        <div class="child child-6"> Child 6</div>
-        <div class="child child-7"> Child 7</div>
-        <div class="child child-8"> Child 8</div>
-        <div class="child child-9"> Child 9</div>
-        <div class="child child-10"> Child 10</div>
-        <div class="child child-11"> Child 11</div>
-        <div class="child child-12"> Child 12</div>
-    </div>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2"/>
+                        <path d="M8 12L12 16L16 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Cursor</span>
+                </div>
+                <nav class="nav">
+                    <a href="#features">Features</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#changelog">Changelog</a>
+                    <a href="#download">Download</a>
+                </nav>
+                <div class="nav-right">
+                    <a href="#" class="sign-in">Sign In</a>
+                    <a href="#" class="download-btn">Download</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">Build software faster in an editor<br>designed for pair-programming with AI</h1>
+            <div class="hero-buttons">
+                <button class="btn btn-primary">Download for free</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Code Editor Showcase 1 -->
+    <section class="showcase">
+        <div class="container">
+            <div class="editor-windows">
+                <div class="editor-window main-window">
+                    <div class="window-header">
+                        <div class="window-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <div class="window-title">main.py</div>
+                    </div>
+                    <div class="window-content">
+                        <pre><code><span class="line-number">1</span>  <span class="keyword">import</span> anthropic
+<span class="line-number">2</span>
+<span class="line-number">3</span>  <span class="keyword">def</span> <span class="function">generate_story</span>(prompt):
+<span class="line-number">4</span>      client = anthropic.Anthropic()
+<span class="line-number">5</span>      
+<span class="line-number">6</span>      message = client.messages.create(
+<span class="line-number">7</span>          model=<span class="string">"claude-3-5-sonnet-20241022"</span>,
+<span class="line-number">8</span>          max_tokens=<span class="number">1024</span>,
+<span class="line-number">9</span>          messages=[
+<span class="line-number">10</span>             {<span class="string">"role"</span>: <span class="string">"user"</span>, <span class="string">"content"</span>: prompt}
+<span class="line-number">11</span>         ]
+<span class="line-number">12</span>     )
+<span class="line-number">13</span>     <span class="keyword">return</span> message.content</code></pre>
+                    </div>
+                </div>
+                <div class="editor-window side-window">
+                    <div class="window-header">
+                        <div class="window-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <div class="window-title">utils.py</div>
+                    </div>
+                    <div class="window-content">
+                        <pre><code><span class="line-number">1</span>  <span class="keyword">def</span> <span class="function">save_to_file</span>(content, filename):
+<span class="line-number">2</span>      <span class="keyword">with</span> <span class="builtin">open</span>(filename, <span class="string">'w'</span>) <span class="keyword">as</span> f:
+<span class="line-number">3</span>          f.write(content)
+<span class="line-number">4</span>
+<span class="line-number">5</span>  <span class="keyword">def</span> <span class="function">read_from_file</span>(filename):
+<span class="line-number">6</span>      <span class="keyword">with</span> <span class="builtin">open</span>(filename, <span class="string">'r'</span>) <span class="keyword">as</span> f:
+<span class="line-number">7</span>          <span class="keyword">return</span> f.read()</code></pre>
+                    </div>
+                </div>
+                <div class="editor-window bottom-window">
+                    <div class="window-header">
+                        <div class="window-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <div class="window-title">Terminal</div>
+                    </div>
+                    <div class="window-content terminal">
+                        <pre><code>$ python main.py
+Generating story...
+Success! Story saved to output.txt</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted By Section -->
+    <section class="trusted-by">
+        <div class="container">
+            <div class="company-logos">
+                <div class="logo-item">OpenAI</div>
+                <div class="logo-item">Midjourney</div>
+                <div class="logo-item">Perplexity</div>
+                <div class="logo-item">Anthropic</div>
+                <div class="logo-item">Replicate</div>
+                <div class="logo-item">Ramp</div>
+                <div class="logo-item">LangChain</div>
+                <div class="logo-item">Adobe</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Section 2 -->
+    <section class="feature-section">
+        <div class="container">
+            <div class="feature-content">
+                <div class="feature-text">
+                    <h2>Write code with<br>the world's best AI</h2>
+                    <p>Tab to accept suggestions from Cursor's AI that's trained on your codebase. Edit in natural language with inline edits and chat.</p>
+                </div>
+                <div class="feature-image">
+                    <div class="editor-window">
+                        <div class="window-header">
+                            <div class="window-dots">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <div class="window-title">api.ts</div>
+                        </div>
+                        <div class="window-content">
+                            <pre><code><span class="line-number">1</span>  <span class="keyword">export</span> <span class="keyword">async</span> <span class="keyword">function</span> <span class="function">fetchUserData</span>(userId: <span class="type">string</span>) {
+<span class="line-number">2</span>      <span class="keyword">const</span> response = <span class="keyword">await</span> <span class="function">fetch</span>(<span class="string">`/api/users/${userId}`</span>);
+<span class="line-number">3</span>      <span class="keyword">const</span> data = <span class="keyword">await</span> response.<span class="function">json</span>();
+<span class="line-number">4</span>      <span class="keyword">return</span> data;
+<span class="line-number">5</span>  }</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Section 3 -->
+    <section class="feature-section dark">
+        <div class="container">
+            <div class="feature-content reverse">
+                <div class="feature-image">
+                    <div class="editor-window">
+                        <div class="window-header">
+                            <div class="window-dots">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <div class="window-title">app.py</div>
+                        </div>
+                        <div class="window-content">
+                            <pre><code><span class="line-number">1</span>  <span class="keyword">from</span> flask <span class="keyword">import</span> Flask, request, jsonify
+<span class="line-number">2</span>  
+<span class="line-number">3</span>  app = Flask(__name__)
+<span class="line-number">4</span>  
+<span class="line-number">5</span>  <span class="decorator">@app.route</span>(<span class="string">'/api/data'</span>, methods=[<span class="string">'GET'</span>])
+<span class="line-number">6</span>  <span class="keyword">def</span> <span class="function">get_data</span>():
+<span class="line-number">7</span>      <span class="keyword">return</span> <span class="function">jsonify</span>({<span class="string">'status'</span>: <span class="string">'success'</span>})</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-text">
+                    <h2>Deploy a custom codebase<br>chatbot in one click</h2>
+                    <p>Ask questions about your codebase and get instant answers. Cursor indexes your entire project for context-aware responses.</p>
+                    <a href="#" class="learn-more">See how it works →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Section 4 -->
+    <section class="feature-section">
+        <div class="container">
+            <div class="feature-content">
+                <div class="feature-text">
+                    <h2>Use the editor's AI with<br>your own API keys</h2>
+                    <p>Bring your own API keys for OpenAI, Anthropic, and more. Keep control over your costs and usage while using the best models.</p>
+                    <a href="#" class="learn-more">Read the docs →</a>
+                </div>
+                <div class="feature-image">
+                    <div class="editor-window">
+                        <div class="window-header">
+                            <div class="window-dots">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <div class="window-title">chat.tsx</div>
+                        </div>
+                        <div class="window-content">
+                            <pre><code><span class="line-number">1</span>  <span class="keyword">const</span> ChatWindow = () => {
+<span class="line-number">2</span>      <span class="keyword">const</span> [messages, setMessages] = <span class="function">useState</span>([]);
+<span class="line-number">3</span>      
+<span class="line-number">4</span>      <span class="keyword">return</span> (
+<span class="line-number">5</span>          <span class="tag">&lt;div</span> <span class="attr">className</span>=<span class="string">"chat-container"</span><span class="tag">&gt;</span>
+<span class="line-number">6</span>              {messages.<span class="function">map</span>(msg => <span class="tag">&lt;Message</span> <span class="attr">key</span>={msg.id} <span class="tag">/&gt;</span>)}
+<span class="line-number">7</span>          <span class="tag">&lt;/div&gt;</span>
+<span class="line-number">8</span>      );
+<span class="line-number">9</span>  };</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Ways Section -->
+    <section class="new-ways">
+        <div class="container">
+            <h2 class="section-title">Find new ways to build software.</h2>
+            <div class="ways-grid">
+                <div class="way-card">
+                    <div class="way-icon">👤</div>
+                    <h3>Chat</h3>
+                    <p>Chat with an AI that knows your entire codebase. Ask questions, get answers, and write code faster than ever.</p>
+                    <a href="#" class="card-link">Learn more →</a>
+                </div>
+                <div class="way-card">
+                    <div class="way-icon">✏️</div>
+                    <h3>Edit</h3>
+                    <p>Make changes to multiple files at once. Write in natural language and let the AI handle the implementation.</p>
+                    <a href="#" class="card-link">Learn more →</a>
+                </div>
+                <div class="way-card">
+                    <div class="way-icon">🔍</div>
+                    <h3>Debug</h3>
+                    <p>Find and fix bugs with AI assistance. Get explanations for errors and suggestions for solutions.</p>
+                    <a href="#" class="card-link">Learn more →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="use-cases">
+        <div class="container">
+            <div class="use-case-grid">
+                <div class="use-case">
+                    <h3>Autocomplete</h3>
+                    <p>Tab to autocomplete with an AI that suggests edits based on your recent changes.</p>
+                    <div class="use-case-image">
+                        <div class="code-snippet">
+                            <code>function getData() {<br>  // AI suggests: return fetch('/api/data')<br>}</code>
+                        </div>
+                    </div>
+                </div>
+                <div class="use-case">
+                    <h3>Cmd+K to edit</h3>
+                    <p>Press Cmd+K to write instructions in natural language and watch the AI make changes.</p>
+                    <div class="use-case-image">
+                        <div class="code-snippet">
+                            <code>// Add error handling to this function<br>async function loadData() {<br>  const data = await fetch('/api');<br>}</code>
+                        </div>
+                    </div>
+                </div>
+                <div class="use-case">
+                    <h3>Copilot++ mode</h3>
+                    <p>Get suggestions from our improved model trained on your codebase.</p>
+                    <div class="use-case-image">
+                        <div class="code-snippet green-theme">
+                            <code>import { useState } from 'react';<br><br>const Counter = () => {<br>  const [count, setCount] = useState(0);<br>}</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Changelog Section -->
+    <section class="changelog">
+        <div class="container">
+            <h2 class="section-title">Changelog</h2>
+            <div class="changelog-grid">
+                <div class="changelog-item">
+                    <div class="changelog-date">January 2024</div>
+                    <h3>Claude 3 Support</h3>
+                    <p>Full support for Anthropic's Claude 3 models including Opus, Sonnet, and Haiku.</p>
+                </div>
+                <div class="changelog-item">
+                    <div class="changelog-date">December 2023</div>
+                    <h3>Multi-file Edit</h3>
+                    <p>Edit multiple files simultaneously with AI assistance across your entire codebase.</p>
+                </div>
+                <div class="changelog-item">
+                    <div class="changelog-date">November 2023</div>
+                    <h3>Terminal Integration</h3>
+                    <p>Run commands and see outputs directly in the editor with full AI assistance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="trust-section">
+        <div class="container">
+            <div class="trust-content">
+                <h2>Cursor is a trusted team-focused<br>editor built for the future of coding.</h2>
+                <div class="trust-features">
+                    <div class="trust-feature">
+                        <h4>🔒 Privacy First</h4>
+                        <p>Your code stays private. We never train on your code without permission.</p>
+                    </div>
+                    <div class="trust-feature">
+                        <h4>⚡ Fast Performance</h4>
+                        <p>Built on VS Code, Cursor is as fast as your favorite editor.</p>
+                    </div>
+                    <div class="trust-feature">
+                        <h4>🎨 Fully Customizable</h4>
+                        <p>Import your VS Code extensions, themes, and keybindings.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="trust-image">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=500&fit=crop" alt="Team collaboration" class="team-photo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+        <div class="container">
+            <div class="pricing-content">
+                <h2>Try Cursor now.</h2>
+                <button class="btn btn-primary large">Download for free</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                            <path d="M8 12L12 16L16 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Cursor</span>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Changelog</a></li>
+                        <li><a href="#">Docs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Community</a></li>
+                        <li><a href="#">Privacy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Social</h4>
+                    <ul>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">Discord</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Cursor. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Terms</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Security</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
