@@ -1,0 +1,2291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mintlify - The Intelligent Knowledge Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #0a0e1a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 14, 26, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-text {
+            font-size: 18px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+            margin: 0 auto;
+        }
+
+        .nav-menu a {
+            color: #9ca3af;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover {
+            color: #ffffff;
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn-secondary {
+            padding: 8px 16px;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .btn-primary {
+            padding: 8px 16px;
+            background: #ffffff;
+            border: none;
+            color: #0a0e1a;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: #f3f4f6;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 140px 0 80px;
+            text-align: center;
+            position: relative;
+            background: radial-gradient(ellipse at top, rgba(16, 185, 129, 0.15) 0%, transparent 50%),
+                        radial-gradient(ellipse at center, rgba(6, 182, 212, 0.1) 0%, transparent 50%);
+        }
+
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, #ffffff, transparent),
+                radial-gradient(2px 2px at 60px 70px, #ffffff, transparent),
+                radial-gradient(1px 1px at 50px 50px, #ffffff, transparent),
+                radial-gradient(1px 1px at 130px 80px, #ffffff, transparent),
+                radial-gradient(2px 2px at 90px 10px, #ffffff, transparent),
+                radial-gradient(1px 1px at 150px 120px, #ffffff, transparent);
+            background-size: 200px 200px;
+            background-repeat: repeat;
+            opacity: 0.3;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 20px;
+            font-size: 13px;
+            margin-bottom: 32px;
+            position: relative;
+        }
+
+        .badge-new {
+            background: #10b981;
+            color: #ffffff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 11px;
+        }
+
+        .badge-text {
+            color: #e5e7eb;
+        }
+
+        .badge-icon {
+            color: #9ca3af;
+            font-size: 16px;
+        }
+
+        .hero-title {
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: #9ca3af;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        .text-green {
+            color: #10b981;
+        }
+
+        .hero-form {
+            display: flex;
+            gap: 12px;
+            max-width: 480px;
+            margin: 0 auto 80px;
+            position: relative;
+        }
+
+        .email-input {
+            flex: 1;
+            padding: 14px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .email-input::placeholder {
+            color: #6b7280;
+        }
+
+        .btn-start {
+            padding: 14px 28px;
+            background: #10b981;
+            border: none;
+            color: #ffffff;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* Documentation Preview */
+        .doc-preview {
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .doc-window {
+            background: #0f1419;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .doc-header {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            padding: 12px 20px;
+            background: #0a0e14;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .doc-logo {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #10b981;
+        }
+
+        .doc-tabs {
+            display: flex;
+            gap: 20px;
+            flex: 1;
+        }
+
+        .tab {
+            font-size: 13px;
+            color: #6b7280;
+            cursor: pointer;
+            padding: 4px 0;
+        }
+
+        .tab.active {
+            color: #10b981;
+            border-bottom: 2px solid #10b981;
+        }
+
+        .doc-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .search-input {
+            padding: 6px 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 6px;
+            color: #9ca3af;
+            font-size: 12px;
+            width: 180px;
+            outline: none;
+        }
+
+        .ask-ai-btn {
+            padding: 6px 12px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            color: #10b981;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .doc-content {
+            display: flex;
+            min-height: 500px;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 240px;
+            background: #0a0e14;
+            padding: 20px 12px;
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            overflow-y: auto;
+        }
+
+        .sidebar-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 12px;
+            font-size: 13px;
+            color: #6b7280;
+            cursor: pointer;
+            border-radius: 6px;
+            margin-bottom: 2px;
+        }
+
+        .sidebar-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: #9ca3af;
+        }
+
+        .sidebar-item.active {
+            background: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+        }
+
+        .sidebar-separator {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.05);
+            margin: 12px 0;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            padding: 32px 40px;
+            overflow-y: auto;
+        }
+
+        .breadcrumb {
+            font-size: 12px;
+            color: #10b981;
+            margin-bottom: 20px;
+        }
+
+        .breadcrumb-active {
+            color: #10b981;
+        }
+
+        .content-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+
+        .content-subtitle {
+            font-size: 16px;
+            color: #6b7280;
+            margin-bottom: 32px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .card {
+            background: rgba(16, 185, 129, 0.03);
+            border: 1px solid rgba(16, 185, 129, 0.15);
+            border-radius: 12px;
+            padding: 24px;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            background: rgba(16, 185, 129, 0.08);
+            border-color: rgba(16, 185, 129, 0.3);
+        }
+
+        .card-icon {
+            margin-bottom: 16px;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+
+        .card-description {
+            font-size: 14px;
+            color: #6b7280;
+            line-height: 1.5;
+        }
+
+        /* Table of Contents */
+        .toc {
+            width: 200px;
+            padding: 32px 20px;
+            background: #0f1419;
+        }
+
+        .toc-header {
+            font-size: 11px;
+            font-weight: 600;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+
+        .toc-item {
+            font-size: 13px;
+            color: #6b7280;
+            padding: 6px 12px;
+            margin-bottom: 4px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .toc-item:hover {
+            color: #9ca3af;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .toc-item.active {
+            color: #10b981;
+            background: rgba(16, 185, 129, 0.1);
+        }
+
+        /* Logos Section */
+        .logos {
+            padding: 60px 0;
+            background: #0a0e1a;
+        }
+
+        .logo-grid {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .company-logo {
+            font-size: 18px;
+            font-weight: 600;
+            color: #ffffff;
+            opacity: 0.6;
+            letter-spacing: 0.5px;
+        }
+
+        .company-logo.microsoft {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .company-logo.hubspot {
+            font-weight: 700;
+        }
+
+        .company-logo.paypal {
+            color: #0070ba;
+            opacity: 0.8;
+        }
+
+        .company-logo.lovable {
+            color: #ff006e;
+            opacity: 0.8;
+        }
+
+        /* Intelligence Age Section */
+        .intelligence-section {
+            padding: 100px 0;
+            background: #0a0e1a;
+        }
+
+        .section-title {
+            font-size: 48px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: #9ca3af;
+            text-align: center;
+            margin-bottom: 80px;
+            line-height: 1.6;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(6, 182, 212, 0.05) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 16px;
+            padding: 40px;
+            position: relative;
+        }
+
+        .feature-card.large {
+            grid-column: 1;
+            grid-row: 1 / 3;
+        }
+
+        .feature-card.wide {
+            grid-column: 1 / 3;
+        }
+
+        .feature-badge {
+            display: inline-block;
+            background: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+        }
+
+        .feature-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+
+        .feature-description {
+            font-size: 15px;
+            color: #9ca3af;
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+
+        .feature-visual {
+            margin-top: 40px;
+        }
+
+        /* Code Window */
+        .code-window {
+            background: #0f1419;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            position: relative;
+        }
+
+        .code-header {
+            margin-bottom: 20px;
+        }
+
+        .dots {
+            display: flex;
+            gap: 6px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #374151;
+        }
+
+        .code-content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .code-line {
+            display: flex;
+            align-items: center;
+        }
+
+        .code-icon {
+            display: flex;
+        }
+
+        .progress-bar {
+            position: relative;
+            height: 32px;
+            background: rgba(16, 185, 129, 0.1);
+            border-radius: 8px;
+            overflow: visible;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 75%;
+            background: #10b981;
+            border-radius: 8px;
+        }
+
+        .progress-indicator {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .code-button {
+            display: flex;
+            justify-content: center;
+        }
+
+        .copy-btn {
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #9ca3af;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .robot-icon {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+        }
+
+        /* Checkmarks */
+        .checkmarks {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 0;
+        }
+
+        .checkmark-item {
+            transition: transform 0.3s;
+        }
+
+        /* Assistant Demo */
+        .assistant-demo {
+            display: flex;
+            background: #0f1419;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            min-height: 350px;
+        }
+
+        .demo-sidebar {
+            width: 250px;
+            background: #0a0e14;
+            padding: 24px 16px;
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .demo-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 12px;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            font-size: 11px;
+            color: #6b7280;
+            font-weight: 600;
+        }
+
+        .demo-item.active {
+            background: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+        }
+
+        .demo-icon {
+            font-size: 14px;
+        }
+
+        .demo-label {
+            letter-spacing: 0.5px;
+        }
+
+        .demo-boxes {
+            display: flex;
+            gap: 8px;
+            padding: 16px 12px;
+            margin-bottom: 8px;
+        }
+
+        .demo-box {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+        }
+
+        .demo-content {
+            padding: 16px 12px;
+        }
+
+        .demo-line {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+            margin-bottom: 8px;
+        }
+
+        .demo-line.short {
+            width: 60%;
+        }
+
+        .demo-main {
+            flex: 1;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .demo-header {
+            margin-bottom: 24px;
+        }
+
+        .demo-tag {
+            display: inline-block;
+            background: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .demo-lines {
+            flex: 1;
+            margin-bottom: 24px;
+        }
+
+        .demo-text-line {
+            height: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+            margin-bottom: 12px;
+        }
+
+        .demo-text-line.short {
+            width: 70%;
+        }
+
+        .demo-chat {
+            margin-bottom: 16px;
+        }
+
+        .chat-input {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 16px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        .chat-indicator {
+            display: flex;
+        }
+
+        .demo-footer {
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-label {
+            font-size: 12px;
+            color: #6b7280;
+            font-weight: 600;
+        }
+
+        /* Enterprise Section */
+        .enterprise-section {
+            padding: 100px 0;
+            background: #111827;
+        }
+
+        .enterprise-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 60px;
+        }
+
+        .enterprise-content {
+            flex: 1;
+        }
+
+        .enterprise-badge {
+            display: inline-block;
+            background: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+        }
+
+        .enterprise-title {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #ffffff;
+            line-height: 1.2;
+        }
+
+        .enterprise-description {
+            font-size: 16px;
+            color: #9ca3af;
+            line-height: 1.6;
+        }
+
+        .enterprise-action {
+            display: flex;
+            align-items: center;
+        }
+
+        .btn-enterprise {
+            padding: 12px 24px;
+            background: #ffffff;
+            border: none;
+            color: #0a0e1a;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .btn-enterprise:hover {
+            background: #f3f4f6;
+        }
+
+        .enterprise-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .enterprise-feature {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(16, 185, 129, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .enterprise-feature-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+
+        .enterprise-feature-desc {
+            font-size: 15px;
+            color: #9ca3af;
+            line-height: 1.6;
+        }
+
+        /* Customer Story Card */
+        .customer-story-card {
+            display: flex;
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f766e 50%, #ca8a04 100%);
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 60px;
+            min-height: 400px;
+            position: relative;
+        }
+
+        .story-content {
+            flex: 1;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            z-index: 2;
+        }
+
+        .story-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 24px;
+            width: fit-content;
+        }
+
+        .story-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: #ffffff;
+            line-height: 1.3;
+        }
+
+        .story-link {
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-bottom: 40px;
+            display: inline-block;
+        }
+
+        .story-link:hover {
+            text-decoration: underline;
+        }
+
+        .story-stats {
+            display: flex;
+            gap: 80px;
+        }
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.5;
+        }
+
+        .story-visual {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .arch-image {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Customer Logos */
+        .customer-logos {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            padding: 40px 0;
+        }
+
+        .customer-logo-item {
+            font-size: 18px;
+            font-weight: 600;
+            color: #ffffff;
+            opacity: 0.8;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .customer-logo-item.dimmed {
+            opacity: 0.3;
+        }
+
+        /* Customer Showcase Section */
+        .customer-showcase {
+            padding: 100px 0;
+            background: #0a0e1a;
+        }
+
+        .showcase-badge {
+            display: inline-block;
+            background: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+        }
+
+        .showcase-title {
+            font-size: 48px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .showcase-subtitle {
+            font-size: 18px;
+            color: #9ca3af;
+            text-align: center;
+            margin-bottom: 60px;
+            line-height: 1.6;
+        }
+
+        .carousel-container {
+            position: relative;
+            overflow: visible;
+        }
+
+        .carousel-track {
+            display: flex;
+            gap: 24px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 20px 0;
+            scrollbar-width: none;
+        }
+
+        .carousel-track::-webkit-scrollbar {
+            display: none;
+        }
+
+        .showcase-card {
+            flex: 0 0 320px;
+            background: #111827;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-image {
+            height: 240px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .x-card {
+            background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+        }
+
+        .kalshi-card {
+            background: linear-gradient(135deg, #059669 0%, #10b981 50%, #fbbf24 100%);
+        }
+
+        .cognition-card {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
+        }
+
+        .together-card {
+            background: linear-gradient(135deg, #1e40af 0%, #0891b2 100%);
+        }
+
+        .laravel-card {
+            background: linear-gradient(135deg, #dc2626 0%, #f97316 100%);
+        }
+
+        .card-brand {
+            font-size: 48px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .cognition-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .cognition-text {
+            font-size: 24px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .laravel-logo {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-weight: 700;
+            color: #dc2626;
+        }
+
+        .card-description {
+            padding: 20px 24px;
+            font-size: 14px;
+            color: #9ca3af;
+            line-height: 1.6;
+            flex: 1;
+        }
+
+        .card-link {
+            padding: 0 24px 24px;
+            color: #10b981;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            display: block;
+        }
+
+        .card-link:hover {
+            text-decoration: underline;
+        }
+
+        .carousel-controls {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 40px;
+        }
+
+        .carousel-btn {
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #9ca3af;
+        }
+
+        .carousel-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+        }
+
+        /* Final CTA Section */
+        .final-cta {
+            padding: 120px 0;
+            background: #0a0e1a;
+            text-align: center;
+        }
+
+        .cta-title {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: #ffffff;
+            line-height: 1.2;
+        }
+
+        .cta-subtitle {
+            font-size: 20px;
+            color: #9ca3af;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .btn-cta-primary {
+            padding: 14px 32px;
+            background: #ffffff;
+            border: none;
+            color: #0a0e1a;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .btn-cta-primary:hover {
+            background: #f3f4f6;
+        }
+
+        .btn-cta-secondary {
+            padding: 14px 32px;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .btn-cta-secondary:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Footer CTA Cards */
+        .footer-cta-cards {
+            padding: 80px 0;
+            background: #0a0e1a;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .cta-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-card {
+            background: rgba(16, 185, 129, 0.05);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 12px;
+            padding: 32px;
+            text-align: center;
+        }
+
+        .cta-card-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(16, 185, 129, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .cta-card-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+
+        .cta-card-desc {
+            font-size: 14px;
+            color: #9ca3af;
+            margin-bottom: 16px;
+        }
+
+        .cta-card-link {
+            color: #10b981;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .cta-card-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .footer {
+            background: #111827;
+            padding: 60px 0 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-main {
+            display: flex;
+            gap: 80px;
+            margin-bottom: 60px;
+            padding-bottom: 60px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-brand {
+            flex-shrink: 0;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .footer-logo-text {
+            font-size: 18px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-link {
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9ca3af;
+            text-decoration: none;
+        }
+
+        .social-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 60px;
+            flex: 1;
+        }
+
+        .footer-column {
+            flex: 1;
+        }
+
+        .footer-heading {
+            font-size: 11px;
+            font-weight: 600;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+
+        .footer-list {
+            list-style: none;
+        }
+
+        .footer-list li {
+            margin-bottom: 12px;
+        }
+
+        .footer-list a {
+            color: #9ca3af;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-list a:hover {
+            color: #ffffff;
+        }
+
+        .footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .footer-security {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 13px;
+            color: #9ca3af;
+        }
+
+        .security-badge {
+            display: flex;
+        }
+
+        .footer-status {
+            display: flex;
+            align-items: center;
+        }
+
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 12px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 6px;
+            font-size: 13px;
+            color: #10b981;
+        }
+
+        .footer-copyright {
+            font-size: 13px;
+            color: #6b7280;
+        }
+
+        .footer-theme {
+            display: flex;
+            gap: 8px;
+        }
+
+        .theme-toggle {
+            width: 32px;
+            height: 32px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6b7280;
+            cursor: pointer;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #9ca3af;
+        }
+
+        .theme-toggle.active {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: rgba(16, 185, 129, 0.3);
+            color: #10b981;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#10B981"/>
+                        <path d="M2 17L12 22L22 17" stroke="#10B981" stroke-width="2"/>
+                        <path d="M2 12L12 17L22 12" stroke="#10B981" stroke-width="2"/>
+                    </svg>
+                    <span class="logo-text">mintlify</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#">Resources</a></li>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">Customers</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Pricing</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="btn-secondary">Contact sales</button>
+                    <button class="btn-primary">Start for free</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="stars"></div>
+        <div class="container">
+            <div class="badge">
+                <span class="badge-new">NEW</span>
+                <span class="badge-text">Self-updating docs with agent suggestions</span>
+                <span class="badge-icon">ⓘ</span>
+            </div>
+            
+            <h1 class="hero-title">
+                The Intelligent<br>
+                Knowledge <span class="highlight">Platform</span>
+            </h1>
+            
+            <p class="hero-subtitle">
+                Helping teams <span class="text-green">create and maintain</span> world-class<br>
+                documentation <span class="text-green">built for both</span> humans and AI
+            </p>
+            
+            <div class="hero-form">
+                <input type="email" placeholder="Email address" class="email-input">
+                <button class="btn-start">Start now</button>
+            </div>
+            
+            <!-- Documentation Preview -->
+            <div class="doc-preview">
+                <div class="doc-window">
+                    <div class="doc-header">
+                        <div class="doc-logo">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#10B981"/>
+                                <path d="M2 17L12 22L22 17" stroke="#10B981" stroke-width="2"/>
+                                <path d="M2 12L12 17L22 12" stroke="#10B981" stroke-width="2"/>
+                            </svg>
+                            <span>mintlify</span>
+                        </div>
+                        <div class="doc-tabs">
+                            <span class="tab active">Guides</span>
+                            <span class="tab">API Reference</span>
+                            <span class="tab">Changelog</span>
+                        </div>
+                        <div class="doc-actions">
+                            <input type="text" placeholder="Search or ask" class="search-input">
+                            <button class="ask-ai-btn">✨ Ask AI</button>
+                        </div>
+                    </div>
+                    
+                    <div class="doc-content">
+                        <div class="sidebar">
+                            <div class="sidebar-item">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M12 2L2 7L12 12L22 7L12 2Z"/>
+                                </svg>
+                                Ask Assistant
+                            </div>
+                            <div class="sidebar-item active">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M9 5L16 12L9 19"/>
+                                </svg>
+                                Quickstart
+                            </div>
+                            <div class="sidebar-item">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <circle cx="12" cy="12" r="10"/>
+                                </svg>
+                                Global Settings
+                            </div>
+                            <div class="sidebar-item">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M12 2L2 7L12 12L22 7L12 2Z"/>
+                                </svg>
+                                AI Optimization
+                            </div>
+                            <div class="sidebar-item">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <rect x="4" y="4" width="16" height="16"/>
+                                </svg>
+                                Components
+                            </div>
+                            <div class="sidebar-item">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M4 6h16M4 12h16M4 18h16"/>
+                                </svg>
+                                Themes
+                            </div>
+                            <div class="sidebar-separator"></div>
+                            <div class="sidebar-item">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <circle cx="12" cy="12" r="10"/>
+                                </svg>
+                                Navigation
+                            </div>
+                            <div class="sidebar-item">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M4 6h16M4 12h16M4 18h16"/>
+                                </svg>
+                                Versioning
+                            </div>
+                            <div class="sidebar-item">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <circle cx="12" cy="12" r="10"/>
+                                </svg>
+                                Custom Domain
+                            </div>
+                            <div class="sidebar-item">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M4 6h16M4 12h16M4 18h16"/>
+                                </svg>
+                                Web Editor
+                            </div>
+                            <div class="sidebar-item">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <rect x="4" y="4" width="16" height="16"/>
+                                </svg>
+                                Development
+                            </div>
+                            <div class="sidebar-separator"></div>
+                            <div class="sidebar-item">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M4 6h16M4 12h16M4 18h16"/>
+                                </svg>
+                                Markdown Syntax
+                            </div>
+                            <div class="sidebar-item">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <rect x="4" y="4" width="16" height="16"/>
+                                </svg>
+                                Code Blocks
+                            </div>
+                            <div class="sidebar-item">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <rect x="4" y="4" width="16" height="16"/>
+                                </svg>
+                                Media Embeds
+                            </div>
+                            <div class="sidebar-item">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <circle cx="12" cy="12" r="10"/>
+                                </svg>
+                                Global Settings
+                            </div>
+                            <div class="sidebar-item">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M4 6h16M4 12h16M4 18h16"/>
+                                </svg>
+                                Navigation
+                            </div>
+                            <div class="sidebar-item">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <rect x="4" y="4" width="16" height="16"/>
+                                </svg>
+                                Snippets
+                            </div>
+                        </div>
+                        
+                        <div class="main-content">
+                            <div class="breadcrumb">
+                                <span class="breadcrumb-active">Getting Started</span>
+                            </div>
+                            
+                            <h2 class="content-title">Quickstart Guide</h2>
+                            <p class="content-subtitle">Start building intelligent documentation in under five minutes</p>
+                            
+                            <div class="card-grid">
+                                <div class="card">
+                                    <div class="card-icon">
+                                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                            <path d="M20 14C20 14 24 10 32 14L36 18C36 18 40 20 38 26C36 32 32 34 28 34L20 30C20 30 16 28 16 22C16 16 20 14 20 14Z" fill="#10B981" opacity="0.2"/>
+                                            <path d="M20 14L32 14L36 18" stroke="#10B981" stroke-width="2"/>
+                                        </svg>
+                                    </div>
+                                    <h3 class="card-title">Quickstart</h3>
+                                    <p class="card-description">Deploy your first docs site in minutes with our step-by-step guide</p>
+                                </div>
+                                
+                                <div class="card">
+                                    <div class="card-icon">
+                                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                            <rect x="16" y="20" width="16" height="12" fill="#10B981" opacity="0.2"/>
+                                            <path d="M18 16L30 16L30 32L18 32Z" stroke="#10B981" stroke-width="2"/>
+                                            <path d="M22 20L26 20M22 24L26 24M22 28L26 28" stroke="#10B981" stroke-width="1.5"/>
+                                        </svg>
+                                    </div>
+                                    <h3 class="card-title">Installation</h3>
+                                    <p class="card-description">Install the CLI to preview and develop your docs locally</p>
+                                </div>
+                                
+                                <div class="card">
+                                    <div class="card-icon">
+                                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                            <path d="M20 18L24 22L28 18M28 26L24 22L20 26" stroke="#10B981" stroke-width="2" opacity="0.3"/>
+                                            <path d="M20 14L28 22L20 30" stroke="#10B981" stroke-width="2"/>
+                                        </svg>
+                                    </div>
+                                    <h3 class="card-title">Web editor</h3>
+                                    <p class="card-description">Make quick updates and manage content with our browser-based editor</p>
+                                </div>
+                                
+                                <div class="card">
+                                    <div class="card-icon">
+                                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                            <rect x="18" y="16" width="12" height="16" fill="#10B981" opacity="0.2"/>
+                                            <path d="M16 16L32 16L32 32L16 32Z" stroke="#10B981" stroke-width="2"/>
+                                            <circle cx="24" cy="20" r="2" fill="#10B981"/>
+                                            <circle cx="20" cy="26" r="2" fill="#10B981"/>
+                                            <circle cx="28" cy="26" r="2" fill="#10B981"/>
+                                        </svg>
+                                    </div>
+                                    <h3 class="card-title">Components</h3>
+                                    <p class="card-description">Build rich, interactive documentation with our ready-to-use components</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="toc">
+                            <div class="toc-header">On this page</div>
+                            <div class="toc-item active">Introduction</div>
+                            <div class="toc-item">Getting started</div>
+                            <div class="toc-item">Installation</div>
+                            <div class="toc-item">Themes</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logos Section -->
+    <section class="logos">
+        <div class="container">
+            <div class="logo-grid">
+                <div class="company-logo">ANTHROPIC</div>
+                <div class="company-logo">coinbase</div>
+                <div class="company-logo microsoft">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <rect width="9" height="9" fill="#F25022"/>
+                        <rect x="11" width="9" height="9" fill="#7FBA00"/>
+                        <rect y="11" width="9" height="9" fill="#00A4EF"/>
+                        <rect x="11" y="11" width="9" height="9" fill="#FFB900"/>
+                    </svg>
+                    Microsoft
+                </div>
+                <div class="company-logo">perplexity</div>
+                <div class="company-logo hubspot">HubSpot</div>
+                <div class="company-logo">𝕏</div>
+                <div class="company-logo paypal">PayPal</div>
+                <div class="company-logo lovable">● Lovable</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intelligence Age Section -->
+    <section class="intelligence-section">
+        <div class="container">
+            <h2 class="section-title">Built for the intelligence age</h2>
+            <p class="section-subtitle">
+                Integrate AI into every part of your docs lifecycle. Woven into how your<br>
+                knowledge is written, maintained, and understood by both users and LLMs.
+            </p>
+
+            <div class="features-grid">
+                <!-- Feature 1: Built for both people and AI -->
+                <div class="feature-card large">
+                    <div class="feature-badge">LLMS.TXT + MCP</div>
+                    <h3 class="feature-title">Built for both people and AI</h3>
+                    <p class="feature-description">
+                        Ensure your product shows up in the AI<br>
+                        workflows users already rely on. We support<br>
+                        llms.txt, MCP, and whatever comes next.
+                    </p>
+                    <div class="feature-visual">
+                        <div class="code-window">
+                            <div class="code-header">
+                                <div class="dots">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
+                            </div>
+                            <div class="code-content">
+                                <div class="code-line">
+                                    <span class="code-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <circle cx="12" cy="12" r="10" stroke="#10b981" stroke-width="2"/>
+                                            <path d="M8 12l2 2 4-4" stroke="#10b981" stroke-width="2"/>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill"></div>
+                                    <div class="progress-indicator">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <rect width="16" height="16" rx="2" fill="#10b981"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="code-button">
+                                    <button class="copy-btn">
+                                        📋 COPY PAGE
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="robot-icon">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                    <circle cx="20" cy="20" r="18" fill="#1f2937" stroke="#374151" stroke-width="2"/>
+                                    <circle cx="15" cy="18" r="2" fill="#10b981"/>
+                                    <circle cx="25" cy="18" r="2" fill="#10b981"/>
+                                    <path d="M14 26h12" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 2: Self-updating knowledge management -->
+                <div class="feature-card">
+                    <div class="feature-badge">AGENT</div>
+                    <h3 class="feature-title">Self-updating knowledge management</h3>
+                    <p class="feature-description">
+                        Draft, edit, and maintain content with a<br>
+                        context-aware agent. Move faster and more<br>
+                        consistently without the documentation debt.
+                    </p>
+                    <div class="feature-visual">
+                        <div class="checkmarks">
+                            <div class="checkmark-item completed">
+                                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                    <circle cx="24" cy="24" r="22" fill="#10b981"/>
+                                    <path d="M16 24l6 6 10-12" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <div class="checkmark-item completed">
+                                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                    <circle cx="24" cy="24" r="22" fill="#10b981"/>
+                                    <path d="M16 24l6 6 10-12" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <div class="checkmark-item active">
+                                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                    <circle cx="24" cy="24" r="22" fill="#10b981"/>
+                                    <path d="M20 24h8M24 20v8" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <div class="checkmark-item pending">
+                                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                    <circle cx="24" cy="24" r="22" stroke="#374151" stroke-width="2"/>
+                                    <path d="M24 16v8l4 4" stroke="#6b7280" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 3: Intelligent assistance for your users -->
+                <div class="feature-card wide">
+                    <div class="feature-badge">ASSISTANT</div>
+                    <h3 class="feature-title">Intelligent assistance for your users</h3>
+                    <p class="feature-description">
+                        Turn every documentation visit into a guided conversation. Your<br>
+                        AI assistant understands context and delivers what users need.
+                    </p>
+                    <div class="feature-visual">
+                        <div class="assistant-demo">
+                            <div class="demo-sidebar">
+                                <div class="demo-item">
+                                    <span class="demo-icon">⚡</span>
+                                    <span class="demo-label">QUICK START GUIDE</span>
+                                </div>
+                                <div class="demo-boxes">
+                                    <div class="demo-box"></div>
+                                    <div class="demo-box"></div>
+                                    <div class="demo-box"></div>
+                                </div>
+                                <div class="demo-item active">
+                                    <span class="demo-icon">🔧</span>
+                                    <span class="demo-label">HELP SERVED</span>
+                                </div>
+                                <div class="demo-item">
+                                    <span class="demo-icon">📊</span>
+                                    <span class="demo-label">UPDATES</span>
+                                </div>
+                                <div class="demo-content">
+                                    <div class="demo-line"></div>
+                                    <div class="demo-line short"></div>
+                                    <div class="demo-line"></div>
+                                </div>
+                            </div>
+                            <div class="demo-main">
+                                <div class="demo-header">
+                                    <span class="demo-tag">🔍 API REFERENCE</span>
+                                </div>
+                                <div class="demo-lines">
+                                    <div class="demo-text-line"></div>
+                                    <div class="demo-text-line short"></div>
+                                    <div class="demo-text-line"></div>
+                                </div>
+                                <div class="demo-chat">
+                                    <div class="chat-input">
+                                        <span>Ask AI anything...</span>
+                                        <div class="chat-indicator">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                <circle cx="8" cy="8" r="6" fill="#10b981"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="demo-footer">
+                                    <span class="footer-label">💬 Questions</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enterprise Section -->
+    <section class="enterprise-section">
+        <div class="container">
+            <div class="enterprise-header">
+                <div class="enterprise-content">
+                    <div class="enterprise-badge">ENTERPRISE-REINVENTION</div>
+                    <h2 class="enterprise-title">Bring intelligence to<br>enterprise knowledge</h2>
+                    <p class="enterprise-description">
+                        Modernize without the rebuild with enterprise-grade professional service & security.
+                    </p>
+                </div>
+                <div class="enterprise-action">
+                    <button class="btn-enterprise">Explore for enterprise</button>
+                </div>
+            </div>
+
+            <div class="enterprise-features">
+                <div class="enterprise-feature">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <circle cx="8" cy="8" r="2" fill="#10b981"/>
+                            <circle cx="16" cy="8" r="2" fill="#10b981"/>
+                            <circle cx="12" cy="14" r="2" fill="#10b981"/>
+                        </svg>
+                    </div>
+                    <h3 class="enterprise-feature-title">Build with partnership</h3>
+                    <p class="enterprise-feature-desc">
+                        Direct, white-glove access to our documentation experts.<br>
+                        Dedicated migration support and guidance tailored to<br>
+                        your setup, and elevated support SLAs.
+                    </p>
+                </div>
+
+                <div class="enterprise-feature">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <rect x="8" y="8" width="8" height="8" rx="1" stroke="#10b981" stroke-width="2"/>
+                            <path d="M12 4v4M12 16v4M4 12h4M16 12h4" stroke="#10b981" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="enterprise-feature-title">Compliance and access control</h3>
+                    <p class="enterprise-feature-desc">
+                        Compliant with SOC 2, and in the process for ISO27001 and GDPR<br>
+                        compliance to meet your internal and external data requirements.<br>
+                        Secure access and provisioning with SAML-based SSO.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Customer Story Card -->
+            <div class="customer-story-card">
+                <div class="story-content">
+                    <div class="story-badge">CUSTOMER STORY</div>
+                    <h3 class="story-title">See how Anthropic accelerates<br>AI development with Mintlify</h3>
+                    <a href="#" class="story-link">Read story →</a>
+                    <div class="story-stats">
+                        <div class="stat">
+                            <div class="stat-number">2M+</div>
+                            <div class="stat-label">Monthly active developers</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">3+</div>
+                            <div class="stat-label">Products serviced: Claude<br>API, MCP, and Claude Code</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="story-visual">
+                    <div class="arch-image">
+                        <svg width="300" height="300" viewBox="0 0 300 300" fill="none">
+                            <!-- Yellow arch -->
+                            <path d="M100 250 Q100 100 150 100 Q200 100 200 250" stroke="#fbbf24" stroke-width="20" fill="none"/>
+                            <!-- Orange arch -->
+                            <path d="M110 250 Q110 110 150 110 Q190 110 190 250" stroke="#f97316" stroke-width="18" fill="none"/>
+                            <!-- Red/Purple arch -->
+                            <path d="M120 250 Q120 120 150 120 Q180 120 180 250" stroke="#dc2626" stroke-width="16" fill="none"/>
+                            <!-- Dark Purple arch -->
+                            <path d="M130 250 Q130 130 150 130 Q170 130 170 250" stroke="#7c3aed" stroke-width="14" fill="none"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Customer Logos -->
+            <div class="customer-logos">
+                <div class="customer-logo-item">ANTHROPIC</div>
+                <div class="customer-logo-item dimmed">coinbase</div>
+                <div class="customer-logo-item dimmed">HubSpot</div>
+                <div class="customer-logo-item dimmed">zapier</div>
+                <div class="customer-logo-item dimmed">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="margin-right: 8px;">
+                        <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    AT&T
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Showcase Section -->
+    <section class="customer-showcase">
+        <div class="container">
+            <div class="showcase-badge">CUSTOMERS</div>
+            <h2 class="showcase-title">Unlock knowledge for any industry</h2>
+            <p class="showcase-subtitle">
+                From frontier AI companies to consumer brands, leaders across industries scale<br>
+                with Mintlify.
+            </p>
+
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <!-- Card 1: X -->
+                    <div class="showcase-card">
+                        <div class="card-image x-card">
+                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                                <path d="M15 15L45 45M45 15L15 45" stroke="white" stroke-width="6" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <p class="card-description">
+                            Mintlify to power the developer<br>
+                            experience for the global town square
+                        </p>
+                        <a href="#" class="card-link">Read story →</a>
+                    </div>
+
+                    <!-- Card 2: Kalshi -->
+                    <div class="showcase-card">
+                        <div class="card-image kalshi-card">
+                            <h2 class="card-brand">Kalshi</h2>
+                        </div>
+                        <p class="card-description">
+                            How Kalshi helps developers discover what's<br>
+                            possible faster and ultimately drive broader...
+                        </p>
+                        <a href="#" class="card-link">Read story →</a>
+                    </div>
+
+                    <!-- Card 3: Cognition -->
+                    <div class="showcase-card">
+                        <div class="card-image cognition-card">
+                            <div class="cognition-logo">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                    <circle cx="20" cy="12" r="3" fill="white"/>
+                                    <circle cx="12" cy="24" r="3" fill="white"/>
+                                    <circle cx="28" cy="24" r="3" fill="white"/>
+                                    <circle cx="20" cy="32" r="3" fill="white"/>
+                                </svg>
+                                <span class="cognition-text">Cognition</span>
+                            </div>
+                        </div>
+                        <p class="card-description">
+                            How Cognition scaled their documentation to mirror<br>
+                            their product ethos
+                        </p>
+                        <a href="#" class="card-link">Read story →</a>
+                    </div>
+
+                    <!-- Card 4: Together.ai -->
+                    <div class="showcase-card">
+                        <div class="card-image together-card">
+                            <h2 class="card-brand">together.ai</h2>
+                        </div>
+                        <p class="card-description">
+                            How Together AI scaled their documentation into a<br>
+                            developer experience that mirrors their own ethos
+                        </p>
+                        <a href="#" class="card-link">Read story →</a>
+                    </div>
+
+                    <!-- Card 5: Laravel -->
+                    <div class="showcase-card">
+                        <div class="card-image laravel-card">
+                            <div class="laravel-logo">L</div>
+                        </div>
+                        <p class="card-description">
+                            How Laravel scaled their documentation<br>
+                            across 10+ products
+                        </p>
+                        <a href="#" class="card-link">Read story →</a>
+                    </div>
+                </div>
+
+                <div class="carousel-controls">
+                    <button class="carousel-btn prev">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <button class="carousel-btn next">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="container">
+            <h2 class="cta-title">
+                Make documentation<br>
+                your winning advantage
+            </h2>
+            <p class="cta-subtitle">
+                Join the leaders of tomorrow to future proof your documentation today.
+            </p>
+            <div class="cta-buttons">
+                <button class="btn-cta-primary">Get started for free</button>
+                <button class="btn-cta-secondary">Get a demo</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA Cards -->
+    <section class="footer-cta-cards">
+        <div class="container">
+            <div class="cta-cards-grid">
+                <div class="cta-card">
+                    <div class="cta-card-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <rect x="8" y="12" width="16" height="12" rx="2" stroke="#10b981" stroke-width="2"/>
+                            <path d="M12 12V10a4 4 0 018 0v2" stroke="#10b981" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="cta-card-title">Pricing on your terms</h3>
+                    <p class="cta-card-desc">Pick the plan that works best for you</p>
+                    <a href="#" class="cta-card-link">Pricing details →</a>
+                </div>
+
+                <div class="cta-card">
+                    <div class="cta-card-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <rect x="10" y="10" width="12" height="12" rx="2" stroke="#10b981" stroke-width="2"/>
+                            <path d="M14 10V8M18 10V8M14 22v2M18 22v2M22 14h2M22 18h2M8 14h2M8 18h2" stroke="#10b981" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="cta-card-title">Start building</h3>
+                    <p class="cta-card-desc">Deploy your documentation in minutes</p>
+                    <a href="#" class="cta-card-link">Quickstart →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#10B981"/>
+                            <path d="M2 17L12 22L22 17" stroke="#10B981" stroke-width="2"/>
+                            <path d="M2 12L12 17L22 12" stroke="#10B981" stroke-width="2"/>
+                        </svg>
+                        <span class="footer-logo-text">mintlify</span>
+                    </div>
+                    <div class="footer-social">
+                        <a href="#" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16 6a4 4 0 00-8 0v8a2 2 0 104 0V9h4" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4 class="footer-heading">EXPLORE</h4>
+                        <ul class="footer-list">
+                            <li><a href="#">Startups</a></li>
+                            <li><a href="#">Enterprise</a></li>
+                            <li><a href="#">Switch</a></li>
+                            <li><a href="#">OSS Program</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4 class="footer-heading">RESOURCES</h4>
+                        <ul class="footer-list">
+                            <li><a href="#">Customers</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Pricing</a></li>
+                            <li><a href="#">Guides</a></li>
+                            <li><a href="#">Feature Requests</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4 class="footer-heading">DOCUMENTATION</h4>
+                        <ul class="footer-list">
+                            <li><a href="#">Getting Started</a></li>
+                            <li><a href="#">API Reference</a></li>
+                            <li><a href="#">Components</a></li>
+                            <li><a href="#">Changelog</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4 class="footer-heading">COMPANY</h4>
+                        <ul class="footer-list">
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Wall of Love</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4 class="footer-heading">LEGAL</h4>
+                        <ul class="footer-list">
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Responsible Disclosure</a></li>
+                            <li><a href="#">Terms Of Service</a></li>
+                            <li><a href="#">Security</a></li>
+                            <li><a href="#">DSR/DSAR</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-security">
+                    <span>Backed By Enterprise-Grade Security</span>
+                    <div class="security-badge">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <circle cx="16" cy="16" r="14" stroke="#6b7280" stroke-width="2"/>
+                            <text x="16" y="20" text-anchor="middle" fill="#6b7280" font-size="10" font-weight="600">SOC 2</text>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="footer-status">
+                    <div class="status-indicator">
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                            <circle cx="6" cy="6" r="5" fill="#10b981"/>
+                        </svg>
+                        <span>All systems normal</span>
+                    </div>
+                </div>
+
+                <div class="footer-copyright">
+                    <span>© 2026 Mintlify, Inc.</span>
+                </div>
+
+                <div class="footer-theme">
+                    <button class="theme-toggle">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/>
+                        </svg>
+                    </button>
+                    <button class="theme-toggle">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M14 8A6 6 0 112 8" stroke="currentColor" stroke-width="1.5"/>
+                        </svg>
+                    </button>
+                    <button class="theme-toggle active">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M8 2v12M2 8h12" stroke="currentColor" stroke-width="1.5"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
