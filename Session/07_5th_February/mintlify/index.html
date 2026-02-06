@@ -3,11 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mintlify - The Intelligent Knowledge Platform</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <title>Mintlify Clone</title>
 </head>
 <body>
     <!-- Header -->
@@ -15,13 +12,10 @@
         <div class="container">
             <nav class="nav">
                 <div class="logo">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#10B981"/>
-                        <path d="M2 17L12 22L22 17" stroke="#10B981" stroke-width="2"/>
-                        <path d="M2 12L12 17L22 12" stroke="#10B981" stroke-width="2"/>
-                    </svg>
+                    <img width="40" height="40" class="logo" src="logos/mintlify_logo.jpeg" alt="Mintlify Logo">
                     <span class="logo-text">mintlify</span>
                 </div>
+
                 <ul class="nav-menu">
                     <li><a href="#">Resources</a></li>
                     <li><a href="#">Documentation</a></li>
@@ -42,9 +36,8 @@
         <div class="stars"></div>
         <div class="container">
             <div class="badge">
-                <span class="badge-new">NEW</span>
+                <span class="badge-new">New</span>
                 <span class="badge-text">Self-updating docs with agent suggestions</span>
-                <span class="badge-icon">ⓘ</span>
             </div>
             
             <h1 class="hero-title">
@@ -61,207 +54,9 @@
                 <input type="email" placeholder="Email address" class="email-input">
                 <button class="btn-start">Start now</button>
             </div>
-            
-            <!-- Documentation Preview -->
-            <div class="doc-preview">
-                <div class="doc-window">
-                    <div class="doc-header">
-                        <div class="doc-logo">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#10B981"/>
-                                <path d="M2 17L12 22L22 17" stroke="#10B981" stroke-width="2"/>
-                                <path d="M2 12L12 17L22 12" stroke="#10B981" stroke-width="2"/>
-                            </svg>
-                            <span>mintlify</span>
-                        </div>
-                        <div class="doc-tabs">
-                            <span class="tab active">Guides</span>
-                            <span class="tab">API Reference</span>
-                            <span class="tab">Changelog</span>
-                        </div>
-                        <div class="doc-actions">
-                            <input type="text" placeholder="Search or ask" class="search-input">
-                            <button class="ask-ai-btn">✨ Ask AI</button>
-                        </div>
-                    </div>
-                    
-                    <div class="doc-content">
-                        <div class="sidebar">
-                            <div class="sidebar-item">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <path d="M12 2L2 7L12 12L22 7L12 2Z"/>
-                                </svg>
-                                Ask Assistant
-                            </div>
-                            <div class="sidebar-item active">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <path d="M9 5L16 12L9 19"/>
-                                </svg>
-                                Quickstart
-                            </div>
-                            <div class="sidebar-item">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <circle cx="12" cy="12" r="10"/>
-                                </svg>
-                                Global Settings
-                            </div>
-                            <div class="sidebar-item">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <path d="M12 2L2 7L12 12L22 7L12 2Z"/>
-                                </svg>
-                                AI Optimization
-                            </div>
-                            <div class="sidebar-item">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <rect x="4" y="4" width="16" height="16"/>
-                                </svg>
-                                Components
-                            </div>
-                            <div class="sidebar-item">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <path d="M4 6h16M4 12h16M4 18h16"/>
-                                </svg>
-                                Themes
-                            </div>
-                            <div class="sidebar-separator"></div>
-                            <div class="sidebar-item">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <circle cx="12" cy="12" r="10"/>
-                                </svg>
-                                Navigation
-                            </div>
-                            <div class="sidebar-item">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <path d="M4 6h16M4 12h16M4 18h16"/>
-                                </svg>
-                                Versioning
-                            </div>
-                            <div class="sidebar-item">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <circle cx="12" cy="12" r="10"/>
-                                </svg>
-                                Custom Domain
-                            </div>
-                            <div class="sidebar-item">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <path d="M4 6h16M4 12h16M4 18h16"/>
-                                </svg>
-                                Web Editor
-                            </div>
-                            <div class="sidebar-item">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <rect x="4" y="4" width="16" height="16"/>
-                                </svg>
-                                Development
-                            </div>
-                            <div class="sidebar-separator"></div>
-                            <div class="sidebar-item">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <path d="M4 6h16M4 12h16M4 18h16"/>
-                                </svg>
-                                Markdown Syntax
-                            </div>
-                            <div class="sidebar-item">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <rect x="4" y="4" width="16" height="16"/>
-                                </svg>
-                                Code Blocks
-                            </div>
-                            <div class="sidebar-item">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <rect x="4" y="4" width="16" height="16"/>
-                                </svg>
-                                Media Embeds
-                            </div>
-                            <div class="sidebar-item">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <circle cx="12" cy="12" r="10"/>
-                                </svg>
-                                Global Settings
-                            </div>
-                            <div class="sidebar-item">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <path d="M4 6h16M4 12h16M4 18h16"/>
-                                </svg>
-                                Navigation
-                            </div>
-                            <div class="sidebar-item">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <rect x="4" y="4" width="16" height="16"/>
-                                </svg>
-                                Snippets
-                            </div>
-                        </div>
-                        
-                        <div class="main-content">
-                            <div class="breadcrumb">
-                                <span class="breadcrumb-active">Getting Started</span>
-                            </div>
-                            
-                            <h2 class="content-title">Quickstart Guide</h2>
-                            <p class="content-subtitle">Start building intelligent documentation in under five minutes</p>
-                            
-                            <div class="card-grid">
-                                <div class="card">
-                                    <div class="card-icon">
-                                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                                            <path d="M20 14C20 14 24 10 32 14L36 18C36 18 40 20 38 26C36 32 32 34 28 34L20 30C20 30 16 28 16 22C16 16 20 14 20 14Z" fill="#10B981" opacity="0.2"/>
-                                            <path d="M20 14L32 14L36 18" stroke="#10B981" stroke-width="2"/>
-                                        </svg>
-                                    </div>
-                                    <h3 class="card-title">Quickstart</h3>
-                                    <p class="card-description">Deploy your first docs site in minutes with our step-by-step guide</p>
-                                </div>
-                                
-                                <div class="card">
-                                    <div class="card-icon">
-                                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                                            <rect x="16" y="20" width="16" height="12" fill="#10B981" opacity="0.2"/>
-                                            <path d="M18 16L30 16L30 32L18 32Z" stroke="#10B981" stroke-width="2"/>
-                                            <path d="M22 20L26 20M22 24L26 24M22 28L26 28" stroke="#10B981" stroke-width="1.5"/>
-                                        </svg>
-                                    </div>
-                                    <h3 class="card-title">Installation</h3>
-                                    <p class="card-description">Install the CLI to preview and develop your docs locally</p>
-                                </div>
-                                
-                                <div class="card">
-                                    <div class="card-icon">
-                                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                                            <path d="M20 18L24 22L28 18M28 26L24 22L20 26" stroke="#10B981" stroke-width="2" opacity="0.3"/>
-                                            <path d="M20 14L28 22L20 30" stroke="#10B981" stroke-width="2"/>
-                                        </svg>
-                                    </div>
-                                    <h3 class="card-title">Web editor</h3>
-                                    <p class="card-description">Make quick updates and manage content with our browser-based editor</p>
-                                </div>
-                                
-                                <div class="card">
-                                    <div class="card-icon">
-                                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                                            <rect x="18" y="16" width="12" height="16" fill="#10B981" opacity="0.2"/>
-                                            <path d="M16 16L32 16L32 32L16 32Z" stroke="#10B981" stroke-width="2"/>
-                                            <circle cx="24" cy="20" r="2" fill="#10B981"/>
-                                            <circle cx="20" cy="26" r="2" fill="#10B981"/>
-                                            <circle cx="28" cy="26" r="2" fill="#10B981"/>
-                                        </svg>
-                                    </div>
-                                    <h3 class="card-title">Components</h3>
-                                    <p class="card-description">Build rich, interactive documentation with our ready-to-use components</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="toc">
-                            <div class="toc-header">On this page</div>
-                            <div class="toc-item active">Introduction</div>
-                            <div class="toc-item">Getting started</div>
-                            <div class="toc-item">Installation</div>
-                            <div class="toc-item">Themes</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        </div>
+        <div class="img-preview">
+            <img src="images/quick_start.png" alt="">
         </div>
     </section>
 
@@ -269,26 +64,19 @@
     <section class="logos">
         <div class="container">
             <div class="logo-grid">
-                <div class="company-logo">ANTHROPIC</div>
-                <div class="company-logo">coinbase</div>
-                <div class="company-logo microsoft">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <rect width="9" height="9" fill="#F25022"/>
-                        <rect x="11" width="9" height="9" fill="#7FBA00"/>
-                        <rect y="11" width="9" height="9" fill="#00A4EF"/>
-                        <rect x="11" y="11" width="9" height="9" fill="#FFB900"/>
-                    </svg>
-                    Microsoft
-                </div>
-                <div class="company-logo">perplexity</div>
-                <div class="company-logo hubspot">HubSpot</div>
-                <div class="company-logo">𝕏</div>
-                <div class="company-logo paypal">PayPal</div>
-                <div class="company-logo lovable">● Lovable</div>
+                <div class="company-logo"><img src="logos/coinbase.svg" alt="coinbase"></div>
+                <div class="company-logo"><img src="logos/Anthropic.svg" alt="Anthropic"></div>
+                <div class="company-logo"><img src="logos/microsoft.svg" alt="microsoft"></div>
+                <div class="company-logo"><img src="logos/perplexity.png" alt="perplexity"></div>
+                <div class="company-logo"><img src="logos/hubspot.svg" alt="hubspot"></div>
+                <div class="company-logo"><img src="logos/meta.svg" alt="meta"></div>
+                <div class="company-logo"><img src="logos/paypal.svg" alt="paypal"></div>
+                <div class="company-logo"><img src="logos/lovable.svg" alt="lovable"></div>
             </div>
         </div>
     </section>
 
+    
     <!-- Intelligence Age Section -->
     <section class="intelligence-section">
         <div class="container">
@@ -336,17 +124,9 @@
                                 </div>
                                 <div class="code-button">
                                     <button class="copy-btn">
-                                        📋 COPY PAGE
+                                        Copy Page
                                     </button>
                                 </div>
-                            </div>
-                            <div class="robot-icon">
-                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                                    <circle cx="20" cy="20" r="18" fill="#1f2937" stroke="#374151" stroke-width="2"/>
-                                    <circle cx="15" cy="18" r="2" fill="#10b981"/>
-                                    <circle cx="25" cy="18" r="2" fill="#10b981"/>
-                                    <path d="M14 26h12" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
-                                </svg>
                             </div>
                         </div>
                     </div>
@@ -362,30 +142,36 @@
                         consistently without the documentation debt.
                     </p>
                     <div class="feature-visual">
-                        <div class="checkmarks">
-                            <div class="checkmark-item completed">
-                                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                                    <circle cx="24" cy="24" r="22" fill="#10b981"/>
-                                    <path d="M16 24l6 6 10-12" stroke="white" stroke-width="3" stroke-linecap="round"/>
-                                </svg>
+                        <div class="code-window">
+                            <div class="code-header">
+                                <div class="dots">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
                             </div>
-                            <div class="checkmark-item completed">
-                                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                                    <circle cx="24" cy="24" r="22" fill="#10b981"/>
-                                    <path d="M16 24l6 6 10-12" stroke="white" stroke-width="3" stroke-linecap="round"/>
-                                </svg>
-                            </div>
-                            <div class="checkmark-item active">
-                                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                                    <circle cx="24" cy="24" r="22" fill="#10b981"/>
-                                    <path d="M20 24h8M24 20v8" stroke="white" stroke-width="3" stroke-linecap="round"/>
-                                </svg>
-                            </div>
-                            <div class="checkmark-item pending">
-                                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                                    <circle cx="24" cy="24" r="22" stroke="#374151" stroke-width="2"/>
-                                    <path d="M24 16v8l4 4" stroke="#6b7280" stroke-width="2" stroke-linecap="round"/>
-                                </svg>
+                            <div class="code-content">
+                                <div class="code-line">
+                                    <span class="code-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <circle cx="12" cy="12" r="10" stroke="#10b981" stroke-width="2"/>
+                                            <path d="M8 12l2 2 4-4" stroke="#10b981" stroke-width="2"/>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill"></div>
+                                    <div class="progress-indicator">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <rect width="16" height="16" rx="2" fill="#10b981"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="code-button">
+                                    <button class="copy-btn">
+                                        Start Agent
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -455,7 +241,7 @@
         </div>
     </section>
 
-    <!-- Enterprise Section -->
+   <!-- Enterprise Section -->
     <section class="enterprise-section">
         <div class="container">
             <div class="enterprise-header">
@@ -521,33 +307,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="story-visual">
-                    <div class="arch-image">
-                        <svg width="300" height="300" viewBox="0 0 300 300" fill="none">
-                            <!-- Yellow arch -->
-                            <path d="M100 250 Q100 100 150 100 Q200 100 200 250" stroke="#fbbf24" stroke-width="20" fill="none"/>
-                            <!-- Orange arch -->
-                            <path d="M110 250 Q110 110 150 110 Q190 110 190 250" stroke="#f97316" stroke-width="18" fill="none"/>
-                            <!-- Red/Purple arch -->
-                            <path d="M120 250 Q120 120 150 120 Q180 120 180 250" stroke="#dc2626" stroke-width="16" fill="none"/>
-                            <!-- Dark Purple arch -->
-                            <path d="M130 250 Q130 130 150 130 Q170 130 170 250" stroke="#7c3aed" stroke-width="14" fill="none"/>
-                        </svg>
-                    </div>
-                </div>
             </div>
 
             <!-- Customer Logos -->
-            <div class="customer-logos">
-                <div class="customer-logo-item">ANTHROPIC</div>
-                <div class="customer-logo-item dimmed">coinbase</div>
-                <div class="customer-logo-item dimmed">HubSpot</div>
-                <div class="customer-logo-item dimmed">zapier</div>
-                <div class="customer-logo-item dimmed">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="margin-right: 8px;">
-                        <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="2"/>
-                    </svg>
-                    AT&T
+            <div class="container">
+                <div class="logo-grid">
+                    <div class="company-logo"><img src="logos/coinbase.svg" alt="coinbase"></div>
+                    <div class="company-logo"><img src="logos/Anthropic.svg" alt="Anthropic"></div>
+                    <div class="company-logo"><img src="logos/microsoft.svg" alt="microsoft"></div>
+                    <div class="company-logo"><img src="logos/perplexity.png" alt="perplexity"></div>
                 </div>
             </div>
         </div>
@@ -556,13 +324,15 @@
     <!-- Customer Showcase Section -->
     <section class="customer-showcase">
         <div class="container">
-            <div class="showcase-badge">CUSTOMERS</div>
-            <h2 class="showcase-title">Unlock knowledge for any industry</h2>
-            <p class="showcase-subtitle">
+            <div class="showcase">
+                <div class="showcase-badge">CUSTOMERS</div>
+                <div class="showcase-title">Unlock knowledge for any industry</div>
+                <div class="showcase-subtitle">
                 From frontier AI companies to consumer brands, leaders across industries scale<br>
                 with Mintlify.
-            </p>
-
+                </div>
+            </div>
+ 
             <div class="carousel-container">
                 <div class="carousel-track">
                     <!-- Card 1: X -->
@@ -607,30 +377,6 @@
                         <p class="card-description">
                             How Cognition scaled their documentation to mirror<br>
                             their product ethos
-                        </p>
-                        <a href="#" class="card-link">Read story →</a>
-                    </div>
-
-                    <!-- Card 4: Together.ai -->
-                    <div class="showcase-card">
-                        <div class="card-image together-card">
-                            <h2 class="card-brand">together.ai</h2>
-                        </div>
-                        <p class="card-description">
-                            How Together AI scaled their documentation into a<br>
-                            developer experience that mirrors their own ethos
-                        </p>
-                        <a href="#" class="card-link">Read story →</a>
-                    </div>
-
-                    <!-- Card 5: Laravel -->
-                    <div class="showcase-card">
-                        <div class="card-image laravel-card">
-                            <div class="laravel-logo">L</div>
-                        </div>
-                        <p class="card-description">
-                            How Laravel scaled their documentation<br>
-                            across 10+ products
                         </p>
                         <a href="#" class="card-link">Read story →</a>
                     </div>
@@ -706,29 +452,12 @@
             <div class="footer-main">
                 <div class="footer-brand">
                     <div class="footer-logo">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#10B981"/>
-                            <path d="M2 17L12 22L22 17" stroke="#10B981" stroke-width="2"/>
-                            <path d="M2 12L12 17L22 12" stroke="#10B981" stroke-width="2"/>
-                        </svg>
-                        <span class="footer-logo-text">mintlify</span>
+                        <span class="logo-text">mintlify</span>
                     </div>
                     <div class="footer-social">
-                        <a href="#" class="social-link">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <path d="M16 6a4 4 0 00-8 0v8a2 2 0 104 0V9h4" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="social-link">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="social-link">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                        </a>
+                        <a href="#" class="social-link" target="_blank">Facebook</a>
+                        <a href="#" class="social-link" target="_blank">Twitter</a>
+                        <a href="#" class="social-link" target="_blank">LinkedIn</a>
                     </div>
                 </div>
 
@@ -786,21 +515,8 @@
             </div>
 
             <div class="footer-bottom">
-                <div class="footer-security">
-                    <span>Backed By Enterprise-Grade Security</span>
-                    <div class="security-badge">
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                            <circle cx="16" cy="16" r="14" stroke="#6b7280" stroke-width="2"/>
-                            <text x="16" y="20" text-anchor="middle" fill="#6b7280" font-size="10" font-weight="600">SOC 2</text>
-                        </svg>
-                    </div>
-                </div>
-
                 <div class="footer-status">
                     <div class="status-indicator">
-                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                            <circle cx="6" cy="6" r="5" fill="#10b981"/>
-                        </svg>
                         <span>All systems normal</span>
                     </div>
                 </div>
@@ -829,5 +545,6 @@
             </div>
         </div>
     </footer>
+
 </body>
 </html>

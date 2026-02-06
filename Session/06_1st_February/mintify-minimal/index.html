@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mintlify Skeleton</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        /* Navigation */
+        .nav {
+            border: 2px solid #ff6b6b;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-left, .nav-right {
+            border: 2px solid #4ecdc4;
+            padding: 10px;
+        }
+
+        /* Hero Section */
+        .hero {
+            border: 2px solid #45b7d1;
+            padding: 40px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .hero-title {
+            border: 2px solid #f9ca24;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+
+        .hero-subtitle {
+            border: 2px solid #6c5ce7;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .hero-buttons {
+            border: 2px solid #a29bfe;
+            padding: 15px;
+        }
+
+        /* Quick Start Section */
+        .quickstart {
+            border: 2px solid #fd79a8;
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+
+        .quickstart-grid {
+            border: 2px solid #fdcb6e;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .quickstart-item {
+            border: 2px solid #55efc4;
+            padding: 15px;
+        }
+
+        /* Features Section */
+        .features {
+            border: 2px solid #74b9ff;
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+
+        .feature-box {
+            border: 2px solid #a29bfe;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+
+        .feature-title {
+            border: 2px solid #ffeaa7;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .feature-content {
+            border: 2px solid #dfe6e9;
+            padding: 15px;
+        }
+
+        /* Enterprise Section */
+        .enterprise {
+            border: 2px solid #ff7675;
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+
+        /* Customer Story */
+        .customer-story {
+            border: 2px solid #fab1a0;
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+
+        /* Customers Grid */
+        .customers {
+            border: 2px solid #81ecec;
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+
+        .customer-grid {
+            border: 2px solid #00b894;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .customer-card {
+            border: 2px solid #0984e3;
+            padding: 15px;
+        }
+
+        /* CTA Section */
+        .cta {
+            border: 2px solid #6c5ce7;
+            padding: 40px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Footer */
+        .footer {
+            border: 2px solid #2d3436;
+            padding: 30px;
+        }
+
+        .footer-columns {
+            border: 2px solid #636e72;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .footer-column {
+            border: 2px solid #b2bec3;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-left">Logo & Menu</div>
+        <div class="nav-right">Contact | Start Free</div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-title">
+            <h1>The Intelligent Knowledge Platform</h1>
+        </div>
+        <div class="hero-subtitle">
+            <p>Helping teams create and maintain world-class documentation</p>
+        </div>
+        <div class="hero-buttons">
+            <button>Start now</button>
+        </div>
+    </section>
+
+    <!-- Quick Start -->
+    <section class="quickstart">
+        <h2>Getting Started</h2>
+        <div class="quickstart-grid">
+            <div class="quickstart-item">Quickstart</div>
+            <div class="quickstart-item">Installation</div>
+            <div class="quickstart-item">Web editor</div>
+            <div class="quickstart-item">Components</div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <h2>Built for the intelligence age</h2>
+        
+        <div class="feature-box">
+            <div class="feature-title">Built for both people and AI</div>
+            <div class="feature-content">LLMS.TXT + MCP support content here</div>
+        </div>
+
+        <div class="feature-box">
+            <div class="feature-title">Self-updating knowledge management</div>
+            <div class="feature-content">Agent features content here</div>
+        </div>
+
+        <div class="feature-box">
+            <div class="feature-title">Intelligent assistance</div>
+            <div class="feature-content">Assistant features content here</div>
+        </div>
+    </section>
+
+    <!-- Enterprise -->
+    <section class="enterprise">
+        <h2>Bring intelligence to enterprise knowledge</h2>
+        <p>Enterprise features and compliance info</p>
+    </section>
+
+    <!-- Customer Story -->
+    <section class="customer-story">
+        <h2>See how Anthropic uses Mintlify</h2>
+        <p>2M+ monthly active developers</p>
+    </section>
+
+    <!-- Customers -->
+    <section class="customers">
+        <h2>Unlock knowledge for any industry</h2>
+        <div class="customer-grid">
+            <div class="customer-card">X/Twitter Story</div>
+            <div class="customer-card">Kalshi Story</div>
+            <div class="customer-card">Cognition Story</div>
+            <div class="customer-card">Together AI Story</div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <h2>Make documentation your winning advantage</h2>
+        <button>Get started for free</button>
+        <button>Get a demo</button>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-columns">
+            <div class="footer-column">EXPLORE<br>Links here</div>
+            <div class="footer-column">RESOURCES<br>Links here</div>
+            <div class="footer-column">DOCUMENTATION<br>Links here</div>
+            <div class="footer-column">COMPANY<br>Links here</div>
+            <div class="footer-column">LEGAL<br>Links here</div>
+        </div>
+    </footer>
+
+</body>
+</html>
