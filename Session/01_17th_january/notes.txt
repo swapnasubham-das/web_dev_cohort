@@ -67,7 +67,7 @@ WWW:-
         Firewalls
         Load Balancer
 
-Assignments:-
+Assignments:--
     Write an article about hardware, router, modem, switch, firewall, hub, load balancer
     Linux command
     Curl command
