@@ -1,0 +1,61 @@
+// 1.
+const nums = [3, 10, 24, 90]
+
+const result = map(e => e * 10 + 1)
+
+function map(fn) {
+    const result = [];
+  
+    for (let i = 0; i < nums.length; i++) {
+      const currentElement = nums[i];
+      const num = fn(currentElement);
+      result.push(num);
+    }
+  
+    return result;
+  }
+  
+  
+console.log(result)
+
+
+// 2.
+const nums2 = [3, 10, 24, 90, 80, 34, 67]
+
+const result2 = nums.forEach(function(e) {
+    if (e % 2 === 0) {
+        console.log(e)
+    }
+})
+console.log(result2)
+
+
+// 2.
+const nums2 = [3, 10, 24, 90, 80, 34, 67]
+
+const result2 = nums.forEach(function(e) {
+    if (e % 2 === 0) {
+        console.log(e)
+    }
+})
+console.log(result2)
+
+
+
+JavaScript hands-on labs with github:
+
+* Conditionals: https://classroom.github.com/a/fwCZoRgs
+* Datatypes Foundation: https://classroom.github.com/a/LXgTzkVh
+* Datatypes Intermediate: https://classroom.github.com/a/ARempKK3
+* Loops: https://classroom.github.com/a/pZ1cSgDU
+* Functions: https://classroom.github.com/a/o2RfZZTy
+
+Procedure to follow:
+
+* Open the link to request
+* Wait for an email to accept invitations
+* Clone your repo to local machine
+* Make code changes & test your code
+* Commit the file changes and
+* Lastly push them to your repo
+* DO NOT raise a Pull request
